@@ -3,18 +3,31 @@
 // Configuring the Articles module
 angular.module('maps').run(['Menus',
   function (Menus) {
-    // Add the articles dropdown item
+    // Maps Item
     Menus.addMenuItem('topbar', {
-      title: 'Maps',
+      title: 'Map',
       state: 'maps',
-      type: 'dropdown',
-      roles: ['*']
+      roles: ['user']
     });
 
-    // Add the dropdown list item
-    Menus.addSubMenuItem('topbar', 'maps', {
-      title: 'View Map',
-      state: 'maps.view'
+    // Manage Dropdown
+    Menus.addMenuItem('topbar', {
+      title: 'Manage',
+      state: 'manage',
+      type: 'dropdown',
+      roles: ['user']
     });
+
+    Menus.addSubMenuItem('topbar', 'manage', {
+      title: 'Nations',
+      state: 'manage.nations',
+      roles: ['user']
+    });
+
+    Menus.addSubMenuItem('topbar', 'manage', {
+      title: 'Universes',
+      state: 'manage.universes',
+      roles: ['user']
+    });    
   }
 ]);
