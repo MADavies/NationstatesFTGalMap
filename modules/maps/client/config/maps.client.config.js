@@ -26,7 +26,7 @@ angular.module('maps').run(['Menus',
 
     Menus.addSubMenuItem('topbar', 'manage', {
       title: 'Universes',
-      state: 'manage.universes',
+      state: 'universes.list',
       roles: ['user']
     });    
   }

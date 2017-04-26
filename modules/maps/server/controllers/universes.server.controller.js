@@ -49,7 +49,7 @@ exports.update = function (req, res) {
     } else {
       res.json(universe);
     }
-  })
+  });
 };
 
 /**
@@ -66,7 +66,7 @@ exports.delete = function (req, res) {
     } else {
       res.json(universe);
     }
-  })
+  });
 };
 
 /**
@@ -75,7 +75,7 @@ exports.delete = function (req, res) {
 exports.list = function (req, res) {
   Universe.find()
     .sort('-created')
-    .populate('user', 'displayName')
+    .populate('owner', 'displayName')
     .exec(function (err, universes) {
       if (err) {
         return res.status(400).send({
@@ -98,7 +98,7 @@ exports.universeByID = function (req, res, next, id) {
   }
 
   Universe.findById(id)
-    .populate('user', 'displayName')
+    .populate('owner', 'displayName')
     .exec(function (err, universe) {
       if (err) {
         return next(err);

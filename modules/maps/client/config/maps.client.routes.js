@@ -12,20 +12,47 @@ angular.module('maps').config(['$stateProvider',
       })
 
       // Manage
-      .state('manage', {
+      .state('universes', {
         abstract: true,
-        url: '/manage',
+        url: '/universes',
         template: '<ui-view/>'
       })
 
-      .state('manage.nations', {
-        url: '/nation',
-        templateUrl: 'modules/maps/client/views/manage-nation.client.view.html'
+      .state('universes.list', {
+        url: '',
+        templateUrl: 'modules/maps/client/views/universe-list.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
       })
 
-      .state('manage.universes', {
-        url: '/universe',
-        templateUrl: 'modules/maps/client/views/manage-universe.client.view.html'
-      });
+      .state('universes.create', {
+        url: '/create',
+        templateUrl: 'modules/maps/client/views/universe-create.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+
+      .state('universes.view', {
+        url: '/:universeId',
+        templateUrl: 'modules/maps/client/views/universe-view.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+
+      .state('universes.edit', {
+        url: '/:universeId',
+        templateUrl: 'modules/maps/client/views/universe-edit.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })     
+
+      .state('manage.nations', {
+        url: '/nation',
+        templateUrl: 'modules/maps/client/views/manage-nation.client.view.html'        
+      })
   }
 ]);
