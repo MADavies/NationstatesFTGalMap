@@ -2,9 +2,9 @@
 
 module.exports = {
   app: {
-    title: 'MEAN.JS',
-    description: 'Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js',
-    keywords: 'mongodb, express, angularjs, node.js, mongoose, passport',
+    title: 'Nationstates FT Galaxy Map',
+    description: 'An interactive, dynamic galaxy map for the NationStates Future Tech universe.',
+    keywords: 'nationstates, nation, states, future, FT, galaxy, galactic, map, maps, interactive, dynamic',
     googleAnalyticsTrackingID: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'GOOGLE_ANALYTICS_TRACKING_ID'
   },
   port: process.env.PORT || 3000,
