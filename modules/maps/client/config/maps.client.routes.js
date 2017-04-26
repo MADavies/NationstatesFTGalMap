@@ -19,12 +19,12 @@ angular.module('maps').config(['$stateProvider',
       })
 
       .state('manage.nations', {
-        url: '/nations',
+        url: '/nation',
         templateUrl: 'modules/maps/client/views/manage-nation.client.view.html'
       })
 
       .state('manage.universes', {
-        url: '/nations',
+        url: '/universe',
         templateUrl: 'modules/maps/client/views/manage-universe.client.view.html'
       })
   }
