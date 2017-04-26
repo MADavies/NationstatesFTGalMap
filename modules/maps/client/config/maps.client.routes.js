@@ -26,6 +26,6 @@ angular.module('maps').config(['$stateProvider',
       .state('manage.universes', {
         url: '/universe',
         templateUrl: 'modules/maps/client/views/manage-universe.client.view.html'
-      })
+      });
   }
 ]);
