@@ -6,7 +6,7 @@ angular.module('map').run(['Menus',
     // Maps Item
     Menus.addMenuItem('topbar', {
       title: 'Map',
-      state: 'map',
+      state: 'map.view',
       roles: ['user', 'admin']
     });
   }

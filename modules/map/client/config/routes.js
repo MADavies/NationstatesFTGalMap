@@ -1,14 +1,20 @@
 'use strict';
+angular.module('map')
+.config(function ($stateProvider) {
+  $stateProvider
+    .state('map', {
+      abstract: true,
+      url: '/map',
+      template: '<ui-view/>'
+    })
 
-// Setting up route
-angular.module('map').config(['$stateProvider',
-  function ($stateProvider) {
-    // Articles state routing
-    $stateProvider
-      // Map
-      .state('map', {
-        url: '/map',
-        templateUrl: 'modules/map/client/views/view-map.html'
-      });
-  }
-]);
+    .state('map.view', {
+      url: '/:universeId',
+      controller: 'MapController',
+      controllerAs: 'MapCtrl',
+      templateUrl: 'modules/map/client/views/view-map.html',
+      data: {
+        roles: ['user', 'admin']
+      }
+    });
+});
