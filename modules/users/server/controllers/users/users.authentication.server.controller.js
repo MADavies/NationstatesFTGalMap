@@ -7,7 +7,8 @@ var path = require('path'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   mongoose = require('mongoose'),
   passport = require('passport'),
-  User = mongoose.model('User');
+  User = mongoose.model('User'),
+  Universes = mongoose.model('Universe');
 
 // URLs for which user can't be redirected on signin
 var noReturnUrls = [
@@ -45,6 +46,15 @@ exports.signup = function (req, res) {
         if (err) {
           res.status(400).send(err);
         } else {
+          // Create a default universe for the new user
+          Universes.create({
+            owner: user,
+            name: 'Default Universe',
+            desc: 'Your first universe. You cannot remove this universe, but you can edit it to your heart\'s content',
+            default: true,
+            managers: []
+          });
+
           res.json(user);
         }
       });

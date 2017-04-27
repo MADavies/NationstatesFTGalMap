@@ -58,6 +58,13 @@ exports.update = function (req, res) {
 exports.delete = function (req, res) {
   var universe = req.universe;
 
+  // User cannot delete their default universe
+  if (universe.default) {
+    return res.status(400).send({
+      message: 'Default universe cannot be deleted'
+    });
+  }
+
   universe.remove(function (err) {
     if (err) {
       return res.status(400).send({
