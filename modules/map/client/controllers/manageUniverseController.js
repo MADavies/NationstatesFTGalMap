@@ -1,7 +1,7 @@
 'use strict';
 
 // Articles controller
-angular.module('maps').controller('UniverseController', ['$scope', '$stateParams', '$location', 'Authentication', 'Universes',
+angular.module('map').controller('ManageUniverseController', ['$scope', '$stateParams', '$location', 'Authentication', 'Universes',
   function ($scope, $stateParams, $location, Authentication, Universes) {
     $scope.authentication = Authentication;
 
